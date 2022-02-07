@@ -1,11 +1,10 @@
 pipeline {
-    stages {
-        agent {
-            docker {
-                image 'python:3-slim' 
-            }
+    agent {
+        docker {
+            image 'python:3-slim' 
         }
-        
+    }
+    stages {
         stage("test") {
 
             steps {
