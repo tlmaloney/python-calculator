@@ -1,14 +1,16 @@
 pipeline {
     stages {
-         agent {
-                docker {
-                    image 'python:3-slim' 
-                }
+        agent {
+            docker {
+                image 'python:3-slim' 
+            }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing...'
-                sh 'pytest --junit-xml=test_results.xml'
+        
+        stage("test PythonEnv") {
+
+            withPythonEnv('python3') {
+                sh 'pip install pytest'
+                sh 'pytest tests'
             }
         }
     }
