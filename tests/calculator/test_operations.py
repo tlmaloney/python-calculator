@@ -1,4 +1,4 @@
-from calculator.operations import add
+from calculator.operations import add, multiply
 import pytest
 
 def test_add():
@@ -8,3 +8,7 @@ def test_add():
 def test_add_string():
     with pytest.raises(TypeError):
         add("string", 4)
+
+def test_multiply():
+    result = multiply(3, 4)
+    assert result == 12
