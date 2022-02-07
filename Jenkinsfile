@@ -4,7 +4,7 @@ pipeline {
                 docker {
                     image 'python:3-slim' 
                 }
-            }
+        }
         stage('Test') {
             steps {
                 echo 'Testing...'
