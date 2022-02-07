@@ -1,12 +1,4 @@
 pipeline {
-
-    agent {
-        docker {
-            image 'node'
-            args '-u root'
-        }
-    }
-
     stages {
         stage('Test') {
             steps {
