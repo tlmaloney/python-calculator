@@ -1,7 +1,25 @@
-stage('Python pytest Tests') {
-	dir('tests') {
-		sh 'virtualenv -p /usr/bin/python3 venv'
-		sh 'source venv/bin/activate && pytest --junit-xml=test_results.xml test || true'
-		junit keepLongStdio: true, allowEmptyResults: true, testResults: 'test_results.xml'
-	}
+pipeline {
+
+    agent {
+        docker {
+            image 'node'
+            args '-u root'
+        }
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+            }
+        }
+		
+        stage('Test') {
+			{
+            steps {
+                echo 'Testing...'
+                sh 'pytest --junit-xml=test_results.xml'
+            }
+        }
+    }
 }
