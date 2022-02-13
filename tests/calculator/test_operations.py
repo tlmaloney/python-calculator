@@ -12,3 +12,6 @@ def test_add_string():
 def test_multiply():
     result = multiply(3, 4)
     assert result == 12
+
+    result = multiply(0, 4)
+    assert result == 0
