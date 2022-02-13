@@ -32,3 +32,11 @@ def test_divide():
 def test_subtract():
     result = subtract(12, 4)
     assert result == 8
+
+
+def test_divide_by_zero():
+    result = divide(12, 4)
+    assert result == 3
+
+    with pytest.raises(ZeroDivisionError):
+        result = divide(12, 0)
