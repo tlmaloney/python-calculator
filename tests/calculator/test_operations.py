@@ -1,4 +1,8 @@
-from calculator.operations import add, multiply
+from calculator.operations import (
+    add,
+    multiply,
+    divide,
+    )
 import pytest
 
 def test_add():
@@ -15,3 +19,8 @@ def test_multiply():
 
     result = multiply(0, 4)
     assert result == 0
+
+
+def test_divide():
+    result = divide(12, 4)
+    assert result == 3
