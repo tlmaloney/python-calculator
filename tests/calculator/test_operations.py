@@ -14,4 +14,4 @@ def test_multiply():
     assert result == 12
 
     result = multiply(0, 4)
-    assert result == 0
+    assert result == 1 # make it fail
